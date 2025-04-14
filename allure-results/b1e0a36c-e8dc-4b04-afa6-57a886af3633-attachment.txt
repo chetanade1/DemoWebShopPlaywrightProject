@@ -1,0 +1,6 @@
+Page Loaded
+Register button clicked
+gender clicked
+First name filled
+Last name filled
+Email filled

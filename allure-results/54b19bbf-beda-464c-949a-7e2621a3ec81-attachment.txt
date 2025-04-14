@@ -1,0 +1,34 @@
+Page Loaded
+Page Title:  Demo Web Shop
+Logo is visible
+Logo Text:  Tricentis Demo Web Shop
+Search Box is visible
+Search Button is visible
+Register Button is visible
+Login Button is visible
+Cart Button is visible
+Wishlist Button is visible
+Catagory Text is visible
+Total Catagory List:  8
+Total Catagory List:  [
+  'Books\n        ',
+  'Computers\n        ',
+  'Electronics\n        ',
+  'Apparel & Shoes\n        ',
+  'Digital downloads\n        ',
+  'Jewelry\n        ',
+  'Gift Cards\n        ',
+  'Tricentis'
+]
+Catagory List is visible
+Manufacturers Text is visible
+Total Manufacturers List:  1
+Total Manufacturers List:  [
+  '\n' +
+    '            \n' +
+    '                    Tricentis\n' +
+    '                    \n' +
+    '            \n' +
+    '        '
+]
+Manufacturers List is visible

@@ -1,0 +1,13 @@
+Page Loaded
+Page Title:  Demo Web Shop
+Logo is visible
+Logo Text:  Tricentis Demo Web Shop
+Search Box is visible
+Search Button is visible
+Register Button is visible
+Login Button is visible
+Cart Button is visible
+Wishlist Button is visible
+Catagory Text is visible
+Total Catagory List:  8
+Catagory List is visible

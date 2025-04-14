@@ -1,0 +1,6 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","5479","has title","chromium","Mon Apr 14 20:38:21 IST 2025","passed","Mon Apr 14 20:38:26 IST 2025","","example.spec.js","",""
+"","8381","get started link","chromium","Mon Apr 14 20:38:21 IST 2025","passed","Mon Apr 14 20:38:29 IST 2025","","example.spec.js","",""
+"","2253","First test","chromium","Mon Apr 14 20:38:28 IST 2025","passed","Mon Apr 14 20:38:31 IST 2025","","welcomeTest.spec.js","",""
+"","30357","Register Page Test","chromium","Mon Apr 14 20:38:21 IST 2025","broken","Mon Apr 14 20:38:51 IST 2025","","RegisterPageTest.spec.js","",""
+"","22024","UI components test","chromium","Mon Apr 14 20:38:21 IST 2025","passed","Mon Apr 14 20:38:43 IST 2025","","UIcomponents.spec.js","",""

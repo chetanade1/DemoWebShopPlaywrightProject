@@ -1,0 +1,456 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: UI components test
+- Location: D:\DemoWebShopProject\tests\UIcomponents.spec.js:4:5
+
+# Error details
+
+```
+Error: Timed out 5000ms waiting for expect(locator).toHaveText(expected)
+
+Locator: locator('#newsletter-result-block')
+Expected string: "Thank you for signing up! A confirmation email has been sent to your inbox."
+Received string: "Enter valid email"
+Call log:
+  - expect.toHaveText with timeout 5000ms
+  - waiting for locator('#newsletter-result-block')
+    9 × locator resolved to <div id="newsletter-result-block" class="newsletter-result-block">Enter valid email</div>
+      - unexpected value "Enter valid email"
+
+    at UIcomponents.getNewslatterResult (D:\DemoWebShopProject\pages\UIcomponents.js:198:40)
+    at D:\DemoWebShopProject\tests\UIcomponents.spec.js:26:5
+```
+
+# Page snapshot
+
+```yaml
+- link "Tricentis Demo Web Shop":
+  - img "Tricentis Demo Web Shop"
+- list:
+  - listitem:
+    - link "Register"
+  - listitem:
+    - link "Log in"
+  - listitem:
+    - link "Shopping cart (0)"
+  - listitem:
+    - link "Wishlist (0)"
+- status
+- textbox: Search store
+- button "Search"
+- list:
+  - listitem:
+    - link "Books"
+  - listitem:
+    - link "Computers"
+  - listitem:
+    - link "Electronics"
+  - listitem:
+    - link "Apparel & Shoes"
+  - listitem:
+    - link "Digital downloads"
+  - listitem:
+    - link "Jewelry"
+  - listitem:
+    - link "Gift Cards"
+- strong: Categories
+- list:
+  - listitem:
+    - link "Books"
+  - listitem:
+    - link "Computers"
+  - listitem:
+    - link "Electronics"
+  - listitem:
+    - link "Apparel & Shoes"
+  - listitem:
+    - link "Digital downloads"
+  - listitem:
+    - link "Jewelry"
+  - listitem:
+    - link "Gift Cards"
+- strong: Manufacturers
+- list:
+  - listitem:
+    - link "Tricentis"
+- strong: Popular tags
+- list:
+  - listitem:
+    - link "apparel"
+  - listitem:
+    - link "awesome"
+  - listitem:
+    - link "book"
+  - listitem:
+    - link "camera"
+  - listitem:
+    - link "cell"
+  - listitem:
+    - link "compact"
+  - listitem:
+    - link "computer"
+  - listitem:
+    - link "cool"
+  - listitem:
+    - link "digital"
+  - listitem:
+    - link "jeans"
+  - listitem:
+    - link "jewelry"
+  - listitem:
+    - link "nice"
+  - listitem:
+    - link "shirt"
+  - listitem:
+    - link "shoes"
+  - listitem:
+    - link "TCP"
+- link "View all"
+- strong: Newsletter
+- text: "Sign up for our newsletter:"
+- textbox: mumbai indians
+- button "Subscribe"
+- strong: Community poll
+- strong: Do you like nopCommerce?
+- list:
+  - listitem:
+    - radio "Excellent"
+    - text: Excellent
+  - listitem:
+    - radio "Good"
+    - text: Good
+  - listitem:
+    - radio "Poor"
+    - text: Poor
+  - listitem:
+    - radio "Very bad"
+    - text: Very bad
+- button "Vote"
+- link
+- img
+- text: Tricentis Academy Prev Next
+- img
+- img
+- img
+- img
+- img
+- img
+- img
+- img
+- img
+- img
+- img
+- img
+- img
+- img
+- img
+- text: 1 2
+- heading "Welcome to our store" [level=2]
+- paragraph: Welcome to the new Tricentis store!
+- paragraph: Feel free to shop around and explore everything.
+- strong: Featured products
+- link "Picture of $25 Virtual Gift Card":
+  - img "Picture of $25 Virtual Gift Card"
+- heading "$25 Virtual Gift Card" [level=2]:
+  - link "$25 Virtual Gift Card"
+- text: "25.00"
+- button "Add to cart"
+- link "Picture of 14.1-inch Laptop":
+  - img "Picture of 14.1-inch Laptop"
+- heading "14.1-inch Laptop" [level=2]:
+  - link "14.1-inch Laptop"
+- text: "1590.00"
+- button "Add to cart"
+- link "Picture of Build your own cheap computer":
+  - img "Picture of Build your own cheap computer"
+- heading "Build your own cheap computer" [level=2]:
+  - link "Build your own cheap computer"
+- text: "800.00"
+- button "Add to cart"
+- link "Picture of Build your own computer":
+  - img "Picture of Build your own computer"
+- heading "Build your own computer" [level=2]:
+  - link "Build your own computer"
+- text: "1200.00"
+- button "Add to cart"
+- link "Picture of Build your own expensive computer":
+  - img "Picture of Build your own expensive computer"
+- heading "Build your own expensive computer" [level=2]:
+  - link "Build your own expensive computer"
+- text: "1800.00"
+- button "Add to cart"
+- link "Picture of Simple Computer":
+  - img "Picture of Simple Computer"
+- heading "Simple Computer" [level=2]:
+  - link "Simple Computer"
+- text: "800.00"
+- button "Add to cart"
+- heading "Information" [level=3]
+- list:
+  - listitem:
+    - link "Sitemap"
+  - listitem:
+    - link "Shipping & Returns"
+  - listitem:
+    - link "Privacy Notice"
+  - listitem:
+    - link "Conditions of Use"
+  - listitem:
+    - link "About us"
+  - listitem:
+    - link "Contact us"
+- heading "Customer service" [level=3]
+- list:
+  - listitem:
+    - link "Search"
+  - listitem:
+    - link "News"
+  - listitem:
+    - link "Blog"
+  - listitem:
+    - link "Recently viewed products"
+  - listitem:
+    - link "Compare products list"
+  - listitem:
+    - link "New products"
+- heading "My account" [level=3]
+- list:
+  - listitem:
+    - link "My account"
+  - listitem:
+    - link "Orders"
+  - listitem:
+    - link "Addresses"
+  - listitem:
+    - link "Shopping cart"
+  - listitem:
+    - link "Wishlist"
+- heading "Follow us" [level=3]
+- list:
+  - listitem:
+    - link "Facebook"
+  - listitem:
+    - link "Twitter"
+  - listitem:
+    - link "RSS"
+  - listitem:
+    - link "YouTube"
+  - listitem:
+    - link "Google+"
+- text: Powered by
+- link "nopCommerce"
+- text: Copyright © 2025 Tricentis Demo Web Shop. All rights reserved.
+```
+
+# Test source
+
+```ts
+   98 |     {
+   99 |         await this.page.waitForSelector(this.cartButton);
+  100 |         const cartButton = await this.page.locator(this.cartButton);
+  101 |         await expect(cartButton).toBeVisible();
+  102 |         console.log("Cart Button is visible");
+  103 |     }
+  104 |
+  105 |     async getWishlistButton()
+  106 |     {
+  107 |         await this.page.waitForSelector(this.wishlistButton);
+  108 |         const wishlistButton = await this.page.locator(this.wishlistButton);
+  109 |         await expect(wishlistButton).toBeVisible();
+  110 |         console.log("Wishlist Button is visible");
+  111 |     }
+  112 |
+  113 |     async getCatagoryText()
+  114 |     {
+  115 |         await this.page.waitForSelector(this.catagoryText);
+  116 |         const catagoryText = await this.page.locator(this.catagoryText);
+  117 |         await expect(catagoryText).toBeVisible();
+  118 |         console.log("Catagory Text is visible");
+  119 |     }
+  120 |
+  121 |     async getCatagoryList()
+  122 |     {
+  123 |         await this.page.waitForSelector(this.catagoryList);
+  124 |         const catagoryList = await this.page.locator(this.catagoryList);
+  125 |         await expect(catagoryList).toHaveCount(8);
+  126 |         console.log("Total Catagory List: ", await catagoryList.count());
+  127 |         console.log("Total Catagory List: ", await catagoryList.allTextContents());
+  128 |         console.log("Catagory List is visible");
+  129 |     }
+  130 |
+  131 |     async getManufacturersText()
+  132 |     {
+  133 |         await this.page.waitForSelector(this.ManufacturersText);
+  134 |         const ManufacturersText = await this.page.locator(this.ManufacturersText);
+  135 |         await expect(ManufacturersText).toBeVisible();
+  136 |         console.log("Manufacturers Text is visible");
+  137 |     }
+  138 |
+  139 |     async getManufacturersList()
+  140 |     {
+  141 |         await this.page.waitForSelector(this.ManufacturersList);
+  142 |         const ManufacturersList = await this.page.locator(this.ManufacturersList);
+  143 |         await expect(ManufacturersList).toHaveCount(1);
+  144 |         console.log("Total Manufacturers List: ", await ManufacturersList.count());
+  145 |         console.log("Total Manufacturers List: ", await ManufacturersList.allTextContents());
+  146 |         await expect(ManufacturersList).toBeVisible();
+  147 |         console.log("Manufacturers List is visible");
+  148 |     }
+  149 |
+  150 |     async getHeaderManuFeatureList()
+  151 |     {
+  152 |         await this.page.waitForSelector(this.HeaderManuFeatureList);
+  153 |         const HeaderManuFeatureList = await this.page.locator(this.HeaderManuFeatureList);
+  154 |         await expect(HeaderManuFeatureList).toHaveCount(14);
+  155 |         console.log("Total Header Manu Feature List: ", await HeaderManuFeatureList.count());
+  156 |         console.log("Total Header Manu Feature List: ", await HeaderManuFeatureList.allTextContents());
+  157 |         console.log("Header Manu Feature List is visible");
+  158 |     }
+  159 |
+  160 |     async getNewsletterText()
+  161 |     {
+  162 |         await this.page.waitForSelector(this.NewsletterText);
+  163 |         const NewsletterText = await this.page.locator(this.NewsletterText);
+  164 |         await expect(NewsletterText).toBeVisible();
+  165 |         console.log("Newsletter Text is visible");
+  166 |     }
+  167 |
+  168 |     async getNewsletterLabelText()
+  169 |     {
+  170 |         await this.page.waitForSelector(this.newsletterLabelText);
+  171 |         const newsletterLabelText = await this.page.locator(this.newsletterLabelText);
+  172 |         await expect(newsletterLabelText).toBeVisible();
+  173 |         console.log("Newsletter Label Text is visible");
+  174 |     }
+  175 |
+  176 |     async getNewslatterInputs()
+  177 |     {
+  178 |         await this.page.waitForSelector(this.newslatterInputs);
+  179 |         const newslatterInputs = await this.page.locator(this.newslatterInputs);
+  180 |         await newslatterInputs.fill("mumbai indians");
+  181 |         await expect(newslatterInputs).toBeVisible();
+  182 |         console.log("Newslatter Inputs is visible");
+  183 |     }
+  184 |
+  185 |     async getNewslatterButton()
+  186 |     {
+  187 |         await this.page.waitForSelector(this.newslatterButton);
+  188 |         const newslatterButton = await this.page.locator(this.newslatterButton);
+  189 |         await expect(newslatterButton).toBeVisible();
+  190 |         await newslatterButton.click();
+  191 |         console.log("Newslatter Button is visible");
+  192 |     }
+  193 |
+  194 |     async getNewslatterResult()
+  195 |     {
+  196 |         await this.page.waitForSelector(this.newslatterResult);
+  197 |         const newslatterResult = await this.page.locator(this.newslatterResult);
+> 198 |         await expect(newslatterResult).toHaveText("Thank you for signing up! A confirmation email has been sent to your inbox.");
+      |                                        ^ Error: Timed out 5000ms waiting for expect(locator).toHaveText(expected)
+  199 |         console.log("Newslatter Result Text: ", await newslatterResult.innerText());
+  200 |         console.log("Newslatter Result Text: ", await newslatterResult.textContent());
+  201 |         console.log("Newslatter Result Text: ", await newslatterResult.allTextContents());
+  202 |         await expect(newslatterResult).toBeVisible();
+  203 |         console.log("Newslatter Result is visible");
+  204 |     }
+  205 |
+  206 |     async getCommunityPollText()
+  207 |     {
+  208 |         await this.page.waitForSelector(this.CommunityPollText);
+  209 |         const CommunityPollText = await this.page.locator(this.CommunityPollText);
+  210 |         await expect(CommunityPollText).toBeVisible();
+  211 |         console.log("Community Poll Text is visible");
+  212 |     }
+  213 |
+  214 |     async getCommunityPollList()
+  215 |     {
+  216 |         await this.page.waitForSelector(this.CommunityPollList);
+  217 |         const CommunityPollList = await this.page.locator(this.CommunityPollList);
+  218 |         await expect(CommunityPollList).toBeVisible();
+  219 |         console.log("Community Poll List is visible");
+  220 |     }
+  221 |
+  222 |     async getCommunityPollVoteButton()
+  223 |     {
+  224 |         await this.page.waitForSelector(this.CommunityPollVoteButton);
+  225 |         const CommunityPollVoteButton = await this.page.locator(this.CommunityPollVoteButton);
+  226 |         await expect(CommunityPollVoteButton).toBeVisible();
+  227 |         console.log("Community Poll Vote Button is visible");
+  228 |     }
+  229 |
+  230 |     async getCommunityPollResult()
+  231 |     {
+  232 |         await this.page.waitForSelector(this.CommunityPollResult);
+  233 |         const CommunityPollResult = await this.page.locator(this.CommunityPollResult);
+  234 |         await expect(CommunityPollResult).toBeVisible();
+  235 |         console.log("Community Poll Result is visible");
+  236 |     }   
+  237 |
+  238 |     async getCommunityPollResultText()
+  239 |     {
+  240 |         await this.page.waitForSelector(this.CommunityPollResultText);
+  241 |         const CommunityPollResultText = await this.page.locator(this.CommunityPollResultText);
+  242 |         await expect(CommunityPollResultText).toBeVisible();
+  243 |         console.log("Community Poll Result Text is visible");
+  244 |     }
+  245 |
+  246 |     async getWelcomeText()
+  247 |     {
+  248 |         await this.page.waitForSelector(this.WelcomeText);
+  249 |         const WelcomeText = await this.page.locator(this.WelcomeText);
+  250 |         await expect(WelcomeText).toBeVisible();
+  251 |         console.log("Welcome Text is visible");
+  252 |     }
+  253 |
+  254 |     async getFeaturedProductsText()
+  255 |     {
+  256 |         await this.page.waitForSelector(this.FeaturedProductsText);
+  257 |         const FeaturedProductsText = await this.page.locator(this.FeaturedProductsText);
+  258 |         await expect(FeaturedProductsText).toBeVisible();
+  259 |         console.log("Featured Products Text is visible");
+  260 |     }
+  261 |
+  262 |     async getFeaturedProductsList()
+  263 |     {
+  264 |         await this.page.waitForSelector(this.FeaturedProductsList);
+  265 |         const FeaturedProductsList = await this.page.locator(this.FeaturedProductsList);
+  266 |         await expect(FeaturedProductsList).toBeVisible();
+  267 |         console.log("Featured Products List is visible");
+  268 |     }
+  269 |
+  270 |     async getInfoText()
+  271 |     {
+  272 |         await this.page.waitForSelector(this.infoText);
+  273 |         const infoText = await this.page.locator(this.infoText);
+  274 |         await expect(infoText).toBeVisible();
+  275 |         console.log("Info Text is visible");
+  276 |     }
+  277 |
+  278 |     async getInfoList()
+  279 |     {
+  280 |         await this.page.waitForSelector(this.infoList);
+  281 |         const infoList = await this.page.locator(this.infoList);
+  282 |         await expect(infoList).toBeVisible();
+  283 |         console.log("Info List is visible");
+  284 |     }
+  285 |
+  286 |     async getInfoListText()
+  287 |     {
+  288 |         await this.page.waitForSelector(this.infoList);
+  289 |         const infoListText = await this.page.locator(this.infoList).innerText();
+  290 |         console.log("Info List Text: ", infoListText);
+  291 |         return infoListText;
+  292 |     }
+  293 |
+  294 |     async getInfoTextText()
+  295 |     {
+  296 |         await this.page.waitForSelector(this.infoText);
+  297 |         const infoTextText = await this.page.locator(this.infoText).innerText();
+  298 |         console.log("Info Text Text: ", infoTextText);
+```

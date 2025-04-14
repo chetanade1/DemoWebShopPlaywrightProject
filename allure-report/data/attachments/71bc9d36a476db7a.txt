@@ -1,0 +1,3 @@
+Page Loaded
+Register button clicked
+gender clicked

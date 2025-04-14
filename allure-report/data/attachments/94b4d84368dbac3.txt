@@ -1,0 +1,270 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Register Page Test
+- Location: D:\DemoWebShopProject\tests\RegisterPageTest.spec.js:5:5
+
+# Error details
+
+```
+Error: locator.fill: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for locator('#input-firstname')
+
+    at RegisterPage.fillFirstName (D:\DemoWebShopProject\pages\RegisterPage.js:32:35)
+    at D:\DemoWebShopProject\tests\RegisterPageTest.spec.js:12:15
+```
+
+# Page snapshot
+
+```yaml
+- link "Tricentis Demo Web Shop":
+  - img "Tricentis Demo Web Shop"
+- list:
+  - listitem:
+    - link "Register"
+  - listitem:
+    - link "Log in"
+  - listitem:
+    - link "Shopping cart (0)"
+  - listitem:
+    - link "Wishlist (0)"
+- status
+- textbox: Search store
+- button "Search"
+- list:
+  - listitem:
+    - link "Books"
+  - listitem:
+    - link "Computers"
+  - listitem:
+    - link "Electronics"
+  - listitem:
+    - link "Apparel & Shoes"
+  - listitem:
+    - link "Digital downloads"
+  - listitem:
+    - link "Jewelry"
+  - listitem:
+    - link "Gift Cards"
+- strong: Categories
+- list:
+  - listitem:
+    - link "Books"
+  - listitem:
+    - link "Computers"
+  - listitem:
+    - link "Electronics"
+  - listitem:
+    - link "Apparel & Shoes"
+  - listitem:
+    - link "Digital downloads"
+  - listitem:
+    - link "Jewelry"
+  - listitem:
+    - link "Gift Cards"
+- strong: Manufacturers
+- list:
+  - listitem:
+    - link "Tricentis"
+- strong: Newsletter
+- text: "Sign up for our newsletter:"
+- textbox
+- button "Subscribe"
+- heading "Register" [level=1]
+- strong: Your Personal Details
+- text: "Gender:"
+- radio "Male"
+- text: Male
+- radio "Female"
+- text: "Female First name:"
+- textbox "First name:"
+- text: "* Last name:"
+- textbox "Last name:"
+- text: "* Email:"
+- textbox "Email:"
+- text: "*"
+- strong: Your Password
+- text: "Password:"
+- textbox "Password:"
+- text: "* Confirm password:"
+- textbox "Confirm password:"
+- text: "*"
+- button "Register"
+- heading "Information" [level=3]
+- list:
+  - listitem:
+    - link "Sitemap"
+  - listitem:
+    - link "Shipping & Returns"
+  - listitem:
+    - link "Privacy Notice"
+  - listitem:
+    - link "Conditions of Use"
+  - listitem:
+    - link "About us"
+  - listitem:
+    - link "Contact us"
+- heading "Customer service" [level=3]
+- list:
+  - listitem:
+    - link "Search"
+  - listitem:
+    - link "News"
+  - listitem:
+    - link "Blog"
+  - listitem:
+    - link "Recently viewed products"
+  - listitem:
+    - link "Compare products list"
+  - listitem:
+    - link "New products"
+- heading "My account" [level=3]
+- list:
+  - listitem:
+    - link "My account"
+  - listitem:
+    - link "Orders"
+  - listitem:
+    - link "Addresses"
+  - listitem:
+    - link "Shopping cart"
+  - listitem:
+    - link "Wishlist"
+- heading "Follow us" [level=3]
+- list:
+  - listitem:
+    - link "Facebook"
+  - listitem:
+    - link "Twitter"
+  - listitem:
+    - link "RSS"
+  - listitem:
+    - link "YouTube"
+  - listitem:
+    - link "Google+"
+- text: Powered by
+- link "nopCommerce"
+- text: Copyright © 2025 Tricentis Demo Web Shop. All rights reserved.
+```
+
+# Test source
+
+```ts
+   1 | exports.RegisterPage = class RegisterPage 
+   2 | {
+   3 |     constructor(page) 
+   4 |     {
+   5 |         this.page = page;
+   6 |         this.registerButton = page.locator("//a[contains(text(),'Register')]");
+   7 |         this.firstNameInput = page.locator("#input-firstname");
+   8 |         this.lastNameInput = page.locator("#input-lastname");
+   9 |         this.emailInput = page.locator("#input-email");
+   10 |         this.telephoneInput = page.locator("#input-telephone");
+   11 |         this.passwordInput = page.locator("#input-password");
+   12 |         this.confirmPasswordInput = page.locator("#input-confirm");
+   13 |         this.subscribeRadioButton = page.locator("//label[contains(text(),'Yes')]");
+   14 |         this.privacyPolicyCheckbox = page.locator("//label[contains(text(),'I have read and agree to the Privacy Policy')]");
+   15 |         this.continueButton = page.locator("//input[@value='Continue']");
+   16 |         this.successMessage = page.locator("//h1[contains(text(),'Your Account Has Been Created!')]");
+   17 |
+   18 |     }
+   19 |
+   20 |     async clickOnRegisterButton() 
+   21 |     {
+   22 |         // Click on the "Register" button
+   23 |         //await this.page.waitForSelector(this.registerButton);
+   24 |         await this.registerButton.click();
+   25 |         console.log("Clicked on Register button");
+   26 |     }
+   27 |
+   28 |     async fillFirstName(firstName) 
+   29 |     {
+   30 |         // Fill in the first name
+   31 |         //await this.page.waitForSelector(this.firstNameInput);
+>  32 |         await this.firstNameInput.fill(firstName);
+      |                                   ^ Error: locator.fill: Test timeout of 30000ms exceeded.
+   33 |         console.log("Filled in First Name: " + firstName);
+   34 |     }
+   35 |
+   36 |     async fillLastName(lastName) 
+   37 |     {
+   38 |         // Fill in the last name
+   39 |         //await this.page.waitForSelector(this.lastNameInput);
+   40 |         await this.lastNameInput.fill(lastName);
+   41 |         console.log("Filled in Last Name: " + lastName);
+   42 |     }
+   43 |
+   44 |     async fillEmail(email) 
+   45 |     {
+   46 |         // Fill in the email
+   47 |         //await this.page.waitForSelector(this.emailInput);
+   48 |         await this.emailInput.fill(email);
+   49 |         console.log("Filled in Email: " + email);
+   50 |     }
+   51 |
+   52 |     async fillTelephone(telephone) 
+   53 |     {
+   54 |         // Fill in the telephone
+   55 |         //await this.page.waitForSelector(this.telephoneInput);
+   56 |         await this.telephoneInput.fill(telephone);
+   57 |         console.log("Filled in Telephone: " + telephone);
+   58 |     }
+   59 |
+   60 |     async fillPassword(password) 
+   61 |     {
+   62 |         // Fill in the password
+   63 |         //await this.page.waitForSelector(this.passwordInput);
+   64 |         await this.passwordInput.fill(password);
+   65 |         console.log("Filled in Password: " + password);
+   66 |     }
+   67 |
+   68 |     async fillConfirmPassword(confirmPassword) 
+   69 |     {
+   70 |         // Fill in the confirm password
+   71 |         //await this.page.waitForSelector(this.confirmPasswordInput);
+   72 |         await this.confirmPasswordInput.fill(confirmPassword);
+   73 |         console.log("Filled in Confirm Password: " + confirmPassword);
+   74 |     }
+   75 |
+   76 |     async clickOnSubscribeRadioButton() 
+   77 |     {
+   78 |         // Click on the "Yes" radio button for subscription
+   79 |         //await this.page.waitForSelector(this.subscribeRadioButton);
+   80 |         await this.subscribeRadioButton.click();
+   81 |         console.log("Clicked on Subscribe Radio Button");
+   82 |     }
+   83 |
+   84 |     async clickOnPrivacyPolicyCheckbox() 
+   85 |     {
+   86 |         // Click on the privacy policy checkbox
+   87 |         //await this.page.waitForSelector(this.privacyPolicyCheckbox);
+   88 |         await this.privacyPolicyCheckbox.click();
+   89 |         console.log("Clicked on Privacy Policy Checkbox");
+   90 |     }
+   91 |
+   92 |     async clickOnContinueButton() 
+   93 |     {
+   94 |         // Click on the "Continue" button
+   95 |         //await this.page.waitForSelector(this.continueButton);
+   96 |         await this.continueButton.click();
+   97 |         console.log("Clicked on Continue Button");
+   98 |     }
+   99 |
+  100 |     async getSuccessMessage() 
+  101 |     {
+  102 |         // Get the success message after registration
+  103 |         //await this.page.waitForSelector(this.successMessage);
+  104 |         const message = await this.successMessage.innerText();
+  105 |         console.log("Success Message: " + message);
+  106 |         return message;
+  107 |     }
+  108 |
+  109 |     
+  110 | }
+```

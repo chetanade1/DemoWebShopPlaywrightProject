@@ -1,0 +1,2 @@
+Page Loaded
+Clicked on Register button
