@@ -1,0 +1,2 @@
+Page Loaded
+Login button clicked

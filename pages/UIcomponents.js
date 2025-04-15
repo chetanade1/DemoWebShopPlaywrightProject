@@ -103,6 +103,14 @@ exports.UIcomponents = class UIcomponents {
         console.log("Login Button is visible");
     }
 
+    async clickOnLoginButton()
+    {
+        await this.page.waitForSelector(this.loginButton, { state: 'visible' });
+        await this.page.locator(this.loginButton).click();
+        //await this.page.waitForTimeout(2000);
+        console.log("Login button clicked")
+    }
+
     async getCartButton()
     {
         await this.page.waitForSelector(this.cartButton);

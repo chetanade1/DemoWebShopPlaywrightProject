@@ -7,11 +7,16 @@ exports.RegisterPage = class RegisterPage
         this.malegen = "#gender-male";
         this.femalegen = "#gender-female";
         this.firstNameInput = "#FirstName"
+        this.firstNameError = "//span[@class='field-validation-error' and @data-valmsg-for='FirstName']";
         this.lastNameInput = "#LastName"
+        this.lastNameError = "//span[@class='field-validation-error' and @data-valmsg-for='LastName']";
         this.emailInput = "#Email"
+        this.emailError = "//span[@class='field-validation-error' and @data-valmsg-for='Email']";
         this.telephoneInput = "#telephone"
         this.passwordInput = "#Password"
+        this.passwordError = "//span[@class='field-validation-error' and @data-valmsg-for='Password']";
         this.confirmPasswordInput = "#ConfirmPassword"
+        this.confirmPasswordError = "//span[@class='field-validation-error' and @data-valmsg-for='ConfirmPassword']";
         this.register = "#register-button"
         this.subscribeRadioButton = "//label[contains(text(),'Yes')"
         this.privacyPolicyCheckbox = "//label[contains(text(),'I have read and agree to the Privacy Policy')]"
@@ -36,25 +41,48 @@ exports.RegisterPage = class RegisterPage
     }
 
     
-    async fillFirstName() 
+    async fillFirstName(FirstName) 
     {
-        await this.page.locator(this.firstNameInput).fill("John");
+        await this.page.locator(this.firstNameInput).fill(FirstName);
         await this.page.waitForTimeout(2000);
         console.log("First name filled")
     }
 
-    async fillLastName() 
+    async getFirstNameErrorValidation()
     {
-        await this.page.locator(this.lastNameInput).fill("wright");
+        const errorMessage = await this.page.locator(this.firstNameError);
+        //console.log("First name error messsage is: " , await errorMassage.textContent());
+        console.log("First name error message is: " + errorMessage);
+        return errorMessage;
+    }
+
+    async fillLastName(Lastname) 
+    {
+        await this.page.locator(this.lastNameInput).fill(Lastname);
         await this.page.waitForTimeout(2000);
         console.log("Last name filled")
     }
 
-    async fillEmail() 
+    async getLastNameErrorValidation()
     {
-        await this.page.locator(this.emailInput).fill("mumbaiindians@ipl.com");
+        const errorMessage = await this.page.locator(this.lastNameError);
+        console.log("Last name error message is: " + errorMessage);
+        return errorMessage;
+    }
+
+
+    async fillEmail(email) 
+    {
+        await this.page.locator(this.emailInput).fill(email);
         await this.page.waitForTimeout(2000);
         console.log("Email filled")
+    }
+
+    async getEmailErrorValidation()
+    {
+        const errorMessage = await this.page.locator(this.emailError);
+        console.log("Email error message is: " + errorMessage);
+        return errorMessage;
     }
 
     
@@ -65,25 +93,42 @@ exports.RegisterPage = class RegisterPage
         console.log("Telephone filled")
     }
 
-    async fillPassword() 
+    async fillPassword(password) 
     {
-        await this.page.locator(this.passwordInput).fill("Password123");
+        await this.page.locator(this.passwordInput).fill(password);
         //await this.page.waitForTimeout(2000);
         console.log("Password filled")
     }
 
-    async fillConfirmPassword() 
+    async getPasswordErrorValidation()
     {
-        await this.page.locator(this.confirmPasswordInput).fill("password123");
+        const errorMessage = await this.page.locator(this.passwordError);
+        console.log("Password error message is: " + errorMessage);
+        return errorMessage;
+    }
+
+
+    async fillConfirmPassword(confiPassword) 
+    {
+        await this.page.locator(this.confirmPasswordInput).fill(confiPassword);
         await this.page.waitForTimeout(2000);
         console.log("Confirm Password filled")
+    }
+
+    async getConfirmPasswordErrorValidation()
+    {
+        const errorMessage = await this.page.locator(this.confirmPasswordError);
+        console.log("error message is : " , await errorMessage.textContent());
+        console.log("Confirm Password error message is: " + errorMessage);
+        return errorMessage;
     }
 
     async clickOnRegButton()
     {
         await this.page.locator(this.register).click();
-        await this.page.waitForTimeout(2000);
         console.log("Register button clicked")
     }
+
+
 
 }

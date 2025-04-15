@@ -1,5 +1,0 @@
-Page Loaded
-Logo is visible
-Logo Text:  Tricentis Demo Web Shop
-Search Box is visible
-Search Button is visible
