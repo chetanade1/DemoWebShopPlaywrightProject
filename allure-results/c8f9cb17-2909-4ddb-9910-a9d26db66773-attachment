@@ -1,0 +1,250 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Register Page Test
+- Location: D:\DemoWebShopProject\tests\RegisterPageTest.spec.js:5:5
+
+# Error details
+
+```
+Error: locator.fill: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for locator('#Email')
+    - locator resolved to <input value="" id="Email" type="text" name="Email" data-val="true" class="text-box single-line" data-val-email="Wrong email" data-val-required="Email is required."/>
+
+    at RegisterPage.fillEmail (D:\DemoWebShopProject\pages\RegisterPage.js:55:50)
+    at D:\DemoWebShopProject\tests\RegisterPageTest.spec.js:15:15
+```
+
+# Page snapshot
+
+```yaml
+- link "Tricentis Demo Web Shop":
+  - img "Tricentis Demo Web Shop"
+- list:
+  - listitem:
+    - link "Register"
+  - listitem:
+    - link "Log in"
+  - listitem:
+    - link "Shopping cart (0)"
+  - listitem:
+    - link "Wishlist (0)"
+- status
+- textbox: Search store
+- button "Search"
+- list:
+  - listitem:
+    - link "Books"
+  - listitem:
+    - link "Computers"
+  - listitem:
+    - link "Electronics"
+  - listitem:
+    - link "Apparel & Shoes"
+  - listitem:
+    - link "Digital downloads"
+  - listitem:
+    - link "Jewelry"
+  - listitem:
+    - link "Gift Cards"
+- strong: Categories
+- list:
+  - listitem:
+    - link "Books"
+  - listitem:
+    - link "Computers"
+  - listitem:
+    - link "Electronics"
+  - listitem:
+    - link "Apparel & Shoes"
+  - listitem:
+    - link "Digital downloads"
+  - listitem:
+    - link "Jewelry"
+  - listitem:
+    - link "Gift Cards"
+- strong: Manufacturers
+- list:
+  - listitem:
+    - link "Tricentis"
+- strong: Newsletter
+- text: "Sign up for our newsletter:"
+- textbox
+- button "Subscribe"
+- heading "Register" [level=1]
+- strong: Your Personal Details
+- text: "Gender:"
+- radio "Male" [checked]
+- text: Male
+- radio "Female"
+- text: "Female First name:"
+- textbox "First name:": John
+- text: "* Last name:"
+- textbox "Last name:": wright
+- text: "* Email:"
+- textbox "Email:"
+- text: "*"
+- strong: Your Password
+- text: "Password:"
+- textbox "Password:"
+- text: "* Confirm password:"
+- textbox "Confirm password:"
+- text: "*"
+- button "Register"
+- heading "Information" [level=3]
+- list:
+  - listitem:
+    - link "Sitemap"
+  - listitem:
+    - link "Shipping & Returns"
+  - listitem:
+    - link "Privacy Notice"
+  - listitem:
+    - link "Conditions of Use"
+  - listitem:
+    - link "About us"
+  - listitem:
+    - link "Contact us"
+- heading "Customer service" [level=3]
+- list:
+  - listitem:
+    - link "Search"
+  - listitem:
+    - link "News"
+  - listitem:
+    - link "Blog"
+  - listitem:
+    - link "Recently viewed products"
+  - listitem:
+    - link "Compare products list"
+  - listitem:
+    - link "New products"
+- heading "My account" [level=3]
+- list:
+  - listitem:
+    - link "My account"
+  - listitem:
+    - link "Orders"
+  - listitem:
+    - link "Addresses"
+  - listitem:
+    - link "Shopping cart"
+  - listitem:
+    - link "Wishlist"
+- heading "Follow us" [level=3]
+- list:
+  - listitem:
+    - link "Facebook"
+  - listitem:
+    - link "Twitter"
+  - listitem:
+    - link "RSS"
+  - listitem:
+    - link "YouTube"
+  - listitem:
+    - link "Google+"
+- text: Powered by
+- link "nopCommerce"
+- text: Copyright © 2025 Tricentis Demo Web Shop. All rights reserved.
+```
+
+# Test source
+
+```ts
+   1 | exports.RegisterPage = class RegisterPage 
+   2 | {
+   3 |     constructor(page) 
+   4 |     {
+   5 |         this.page = page;
+   6 |         this.registerButton = "//a[contains(text(),'Register')]"
+   7 |         this.malegen = "#gender-male";
+   8 |         this.femalegen = "#gender-female";
+   9 |         this.firstNameInput = "#FirstName"
+  10 |         this.lastNameInput = "#LastName"
+  11 |         this.emailInput = "#Email"
+  12 |         this.telephoneInput = "#telephone"
+  13 |         this.passwordInput = "#Password"
+  14 |         this.confirmPasswordInput = "#ConfirmPassword"
+  15 |         this.register = "#register-button"
+  16 |         this.subscribeRadioButton = "//label[contains(text(),'Yes')"
+  17 |         this.privacyPolicyCheckbox = "//label[contains(text(),'I have read and agree to the Privacy Policy')]"
+  18 |         this.continueButton = "//input[@value='Continue']"
+  19 |         this.successMessage = "//h1[contains(text(),'Your Account Has Been Created!')]"
+  20 |
+  21 |     }
+  22 |
+  23 |     async clickOnRegisterButton() 
+  24 |     {
+  25 |         await this.page.waitForSelector(this.registerButton, { state: 'visible' });
+  26 |         await this.page.locator(this.registerButton).click();
+  27 |         await this.page.waitForTimeout(2000);
+  28 |         console.log("Register button clicked")
+  29 |     }
+  30 |
+  31 |     async clickOnGenderMaleButton()
+  32 |     {
+  33 |         await this.page.locator(this.malegen).click();
+  34 |         await this.page.waitForTimeout(2000);
+  35 |         console.log("gender clicked")
+  36 |     }
+  37 |
+  38 |     
+  39 |     async fillFirstName() 
+  40 |     {
+  41 |         await this.page.locator(this.firstNameInput).fill("John");
+  42 |         await this.page.waitForTimeout(2000);
+  43 |         console.log("First name filled")
+  44 |     }
+  45 |
+  46 |     async fillLastName() 
+  47 |     {
+  48 |         await this.page.locator(this.lastNameInput).fill("wright");
+  49 |         await this.page.waitForTimeout(2000);
+  50 |         console.log("Last name filled")
+  51 |     }
+  52 |
+  53 |     async fillEmail() 
+  54 |     {
+> 55 |         await this.page.locator(this.emailInput).fill("mumbaiindians@ipl.com");
+     |                                                  ^ Error: locator.fill: Test timeout of 30000ms exceeded.
+  56 |         await this.page.waitForTimeout(2000);
+  57 |         console.log("Email filled")
+  58 |     }
+  59 |
+  60 |     
+  61 |     async fillTelephone() 
+  62 |     {
+  63 |         await this.page.locator(this.telephoneInput).fill("1234567890");
+  64 |         await this.page.waitForTimeout(2000);
+  65 |         console.log("Telephone filled")
+  66 |     }
+  67 |
+  68 |     async fillPassword() 
+  69 |     {
+  70 |         await this.page.locator(this.passwordInput).fill("Password123");
+  71 |         //await this.page.waitForTimeout(2000);
+  72 |         console.log("Password filled")
+  73 |     }
+  74 |
+  75 |     async fillConfirmPassword() 
+  76 |     {
+  77 |         await this.page.locator(this.confirmPasswordInput).fill("password123");
+  78 |         await this.page.waitForTimeout(2000);
+  79 |         console.log("Confirm Password filled")
+  80 |     }
+  81 |
+  82 |     async clickOnRegButton()
+  83 |     {
+  84 |         await this.page.locator(this.register).click();
+  85 |         await this.page.waitForTimeout(2000);
+  86 |         console.log("Register button clicked")
+  87 |     }
+  88 |
+  89 | }
+```
