@@ -1,0 +1,5 @@
+Page Loaded
+Register button clicked
+gender clicked
+Register button clicked
+First name error message is: locator('//span[@for=\'FirstName\']')

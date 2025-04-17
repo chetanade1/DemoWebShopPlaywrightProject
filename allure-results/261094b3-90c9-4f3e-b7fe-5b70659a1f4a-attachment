@@ -1,0 +1,225 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Add to Cart
+- Location: D:\DemoWebShopProject\tests\AddToCartPageTest.spec.js:6:5
+
+# Error details
+
+```
+Error: locator.textContent: Error: strict mode violation: locator('//h2[@class=\'title\']') resolved to 2 elements:
+    1) <h2 class="title">…</h2> aka getByRole('heading', { name: 'Camera, photo' })
+    2) <h2 class="title">…</h2> aka getByRole('heading', { name: 'Cell phones' })
+
+Call log:
+  - waiting for locator('//h2[@class=\'title\']')
+
+    at AddToCartPage.selectTheElectronicsList (D:\DemoWebShopProject\pages\AddToCartPage.js:52:73)
+    at D:\DemoWebShopProject\tests\AddToCartPageTest.spec.js:20:15
+```
+
+# Page snapshot
+
+```yaml
+- link "Tricentis Demo Web Shop":
+  - img "Tricentis Demo Web Shop"
+- list:
+  - listitem:
+    - link "mrchetanade@gmail.com"
+  - listitem:
+    - link "Log out"
+  - listitem:
+    - link "Shopping cart (0)"
+  - listitem:
+    - link "Wishlist (0)"
+- status
+- textbox: Search store
+- button "Search"
+- list:
+  - listitem:
+    - link "Books"
+  - listitem:
+    - link "Computers"
+  - listitem:
+    - link "Electronics"
+    - list:
+      - listitem:
+        - link "Camera, photo"
+      - listitem:
+        - link "Cell phones"
+  - listitem:
+    - link "Apparel & Shoes"
+  - listitem:
+    - link "Digital downloads"
+  - listitem:
+    - link "Jewelry"
+  - listitem:
+    - link "Gift Cards"
+- strong: Categories
+- list:
+  - listitem:
+    - link "Books"
+  - listitem:
+    - link "Computers"
+  - listitem:
+    - link "Electronics"
+    - list:
+      - listitem:
+        - link "Camera, photo"
+      - listitem:
+        - link "Cell phones"
+  - listitem:
+    - link "Apparel & Shoes"
+  - listitem:
+    - link "Digital downloads"
+  - listitem:
+    - link "Jewelry"
+  - listitem:
+    - link "Gift Cards"
+- strong: Manufacturers
+- list:
+  - listitem:
+    - link "Tricentis"
+- strong: Newsletter
+- text: "Sign up for our newsletter:"
+- textbox
+- button "Subscribe"
+- list:
+  - listitem:
+    - link "Home"
+    - text: /
+  - listitem:
+    - strong: Electronics
+- heading "Electronics" [level=1]
+- heading "Camera, photo" [level=2]:
+  - link "Camera, photo"
+- link "Picture for category Camera, photo":
+  - img "Picture for category Camera, photo"
+- heading "Cell phones" [level=2]:
+  - link "Cell phones"
+- link "Picture for category Cell phones":
+  - img "Picture for category Cell phones"
+- heading "Information" [level=3]
+- list:
+  - listitem:
+    - link "Sitemap"
+  - listitem:
+    - link "Shipping & Returns"
+  - listitem:
+    - link "Privacy Notice"
+  - listitem:
+    - link "Conditions of Use"
+  - listitem:
+    - link "About us"
+  - listitem:
+    - link "Contact us"
+- heading "Customer service" [level=3]
+- list:
+  - listitem:
+    - link "Search"
+  - listitem:
+    - link "News"
+  - listitem:
+    - link "Blog"
+  - listitem:
+    - link "Recently viewed products"
+  - listitem:
+    - link "Compare products list"
+  - listitem:
+    - link "New products"
+- heading "My account" [level=3]
+- list:
+  - listitem:
+    - link "My account"
+  - listitem:
+    - link "Orders"
+  - listitem:
+    - link "Addresses"
+  - listitem:
+    - link "Shopping cart"
+  - listitem:
+    - link "Wishlist"
+- heading "Follow us" [level=3]
+- list:
+  - listitem:
+    - link "Facebook"
+  - listitem:
+    - link "Twitter"
+  - listitem:
+    - link "RSS"
+  - listitem:
+    - link "YouTube"
+  - listitem:
+    - link "Google+"
+- text: Powered by
+- link "nopCommerce"
+- text: Copyright © 2025 Tricentis Demo Web Shop. All rights reserved.
+```
+
+# Test source
+
+```ts
+   1 | exports.AddToCartPage = class AddToCartPage{
+   2 |
+   3 |     constructor(page)
+   4 |     {
+   5 |         this.page = page;
+   6 |         this.headerMenu = "//div[@class='header-menu']/ul/li/a";
+   7 |         this.camera = "//h2/a[contains(text(),'Camera')]";
+   8 |         this.cell = "//h2/a[contains(text(),'cell')]";
+   9 |         this.heading = "//h1";
+  10 |         this.elctronicsList = "//h2[@class='title']";
+  11 |
+  12 |
+  13 |     }
+  14 |
+  15 |     async selectTheHeaderMenu(HeaderName)
+  16 |     {
+  17 |         const HeaderMenuList = await this.page.$$(this.headerMenu);
+  18 |         //const menuList = await HeaderMenuList.count();
+  19 |         //console.log(menuList);
+  20 |
+  21 |         for (const menu of HeaderMenuList)
+  22 |         {
+  23 |             //console.log(await menu.textContent());
+  24 |             //console.log("Total item list : ", await menu.count());
+  25 |            
+  26 |             const value = await menu.textContent();
+  27 |             console.log(value);
+  28 |
+  29 |             if(value.includes(HeaderName))
+  30 |             {
+  31 |                 await Promise.all([
+  32 |                     this.page.waitForNavigation(), // ✅ waits for navigation safely
+  33 |                     menu.click()
+  34 |                 ]);
+  35 |                 console.log("item selected");
+  36 |                 break; // stop after clicking
+  37 |             }
+  38 |                 
+  39 |
+  40 |         }
+  41 |
+  42 |     }
+  43 |
+  44 |     async getPageTitle()
+  45 |     {
+  46 |         const title = await this.page.title();
+  47 |         console.log("the page title is :", +title);
+  48 |     }
+  49 |
+  50 |     async selectTheElectronicsList()
+  51 |     {
+> 52 |         const EleList = await this.page.locator("//h2[@class='title']").textContent();
+     |                                                                         ^ Error: locator.textContent: Error: strict mode violation: locator('//h2[@class=\'title\']') resolved to 2 elements:
+  53 |         //console.log("Electronics list is:", EleList.count());
+  54 |         console.log("Electronics list is :", EleList.trim());
+  55 |
+  56 |     }
+  57 | }
+```

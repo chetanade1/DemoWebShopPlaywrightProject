@@ -1,0 +1,87 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Add to Cart
+- Location: D:\DemoWebShopProject\tests\AddToCartPageTest.spec.js:6:5
+
+# Error details
+
+```
+Error: locator.textContent: Error: strict mode violation: locator('//h2[@class=\'title\']') resolved to 2 elements:
+    1) <h2 class="title">…</h2> aka getByRole('heading', { name: 'Camera, photo' })
+    2) <h2 class="title">…</h2> aka getByRole('heading', { name: 'Cell phones' })
+
+Call log:
+  - waiting for locator('//h2[@class=\'title\']')
+
+    at AddToCartPage.selectTheElectronicsList (D:\DemoWebShopProject\pages\AddToCartPage.js:54:54)
+    at D:\DemoWebShopProject\tests\AddToCartPageTest.spec.js:20:5
+```
+
+# Test source
+
+```ts
+   1 | exports.AddToCartPage = class AddToCartPage{
+   2 |
+   3 |     constructor(page)
+   4 |     {
+   5 |         this.page = page;
+   6 |         this.headerMenu = "//div[@class='header-menu']/ul/li/a";
+   7 |         this.camera = "//h2/a[contains(text(),'Camera')]";
+   8 |         this.cell = "//h2/a[contains(text(),'cell')]";
+   9 |         this.heading = "//h1";
+  10 |         this.elctronicsList = "//h2[@class='title']";
+  11 |
+  12 |
+  13 |     }
+  14 |
+  15 |     async selectTheHeaderMenu(HeaderName)
+  16 |     {
+  17 |         const HeaderMenuList = await this.page.$$(this.headerMenu);
+  18 |         //const menuList = await HeaderMenuList.count();
+  19 |         //console.log(menuList);
+  20 |
+  21 |         for (const menu of HeaderMenuList)
+  22 |         {
+  23 |             //console.log(await menu.textContent());
+  24 |             //console.log("Total item list : ", await menu.count());
+  25 |            
+  26 |             const value = await menu.textContent();
+  27 |             console.log(value);
+  28 |
+  29 |             if(value.includes(HeaderName))
+  30 |             {
+  31 |                 await Promise.all([
+  32 |                     this.page.waitForNavigation(), // ✅ waits for navigation safely
+  33 |                     menu.click()
+  34 |                 ]);
+  35 |                 console.log("item selected");
+  36 |                 break; // stop after clicking
+  37 |             }
+  38 |                 
+  39 |
+  40 |         }
+  41 |
+  42 |     }
+  43 |
+  44 |     async getPageTitle()
+  45 |     {
+  46 |         const title = await this.page.title();
+  47 |         console.log("the page title is :", +title);
+  48 |     }
+  49 |
+  50 |     async selectTheElectronicsList()
+  51 |     {
+  52 |         const EleList = await this.page.locator("//h2[@class='title']");
+  53 |         console.log("Electronics list is:", EleList.count());
+> 54 |         console.log("Electronics list is :", EleList.textContent());
+     |                                                      ^ Error: locator.textContent: Error: strict mode violation: locator('//h2[@class=\'title\']') resolved to 2 elements:
+  55 |
+  56 |     }
+  57 | }
+```

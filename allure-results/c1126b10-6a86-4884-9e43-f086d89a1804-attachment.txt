@@ -1,0 +1,19 @@
+Page Loaded
+Login button clicked
+Login Successfully
+Books
+        
+Computers
+        
+Electronics
+        
+Apparel & Shoes
+        
+Digital downloads
+        
+Jewelry
+        
+Gift Cards
+        
+item selected
+the page title is : NaN

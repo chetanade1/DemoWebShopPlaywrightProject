@@ -1,0 +1,14 @@
+Page Loaded
+Login button clicked
+Login Successfully
+Books
+        
+Computers
+        
+Electronics
+        
+Apparel & Shoes
+        
+item selected
+the page title is : NaN
+Number of electronics items: 0

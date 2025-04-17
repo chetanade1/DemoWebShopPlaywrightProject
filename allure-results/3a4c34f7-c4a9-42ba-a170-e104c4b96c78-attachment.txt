@@ -1,0 +1,8 @@
+Page Loaded
+Register button clicked
+gender clicked
+Register button clicked
+First name error message is: locator('//span[@class=\'field-validation-error\' and @data-valmsg-for=\'FirstName\']')
+Last name error message is: locator('//span[@class=\'field-validation-error\' and @data-valmsg-for=\'LastName\']')
+Email error message is: locator('//span[@class=\'field-validation-error\' and @data-valmsg-for=\'Email\']')
+Password error message is: locator('//span[@class=\'field-validation-error\' and @data-valmsg-for=\'Password\']')

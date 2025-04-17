@@ -1,0 +1,210 @@
+Page Loaded
+Login button clicked
+Login Successfully
+Books
+        
+Computers
+        
+Electronics
+        
+item selected
+the page title is : NaN
+Number of electronics items: 2
+camera item selected
+Camera, photo
+Camera, photo
+4
+[
+  '\n' +
+    '                        \n' +
+    '\n' +
+    '    \n' +
+    '        \n' +
+    '            \n' +
+    '        \n' +
+    '    \n' +
+    '    \n' +
+    '        \n' +
+    '            1MP 60GB Hard Drive Handycam Camcorder\n' +
+    '        \n' +
+    '            \n' +
+    '                \n' +
+    '                    \n' +
+    '                    \n' +
+    '                \n' +
+    '            \n' +
+    '        \n' +
+    '            Capture video to hard disk drive; 60 GB storage\n' +
+    '        \n' +
+    '        \n' +
+    '            \n' +
+    '                349.00\n' +
+    '            \n' +
+    '            \n' +
+    '                \n' +
+    '            \n' +
+    '            \n' +
+    '        \n' +
+    '    \n' +
+    '\n' +
+    '\n' +
+    '                    ',
+  '\n' +
+    '                        \n' +
+    '\n' +
+    '    \n' +
+    '        \n' +
+    '            \n' +
+    '        \n' +
+    '    \n' +
+    '    \n' +
+    '        \n' +
+    '            Camcorder\n' +
+    '        \n' +
+    '            \n' +
+    '                \n' +
+    '                    \n' +
+    '                    \n' +
+    '                \n' +
+    '            \n' +
+    '        \n' +
+    '            12x optical zoom; SuperRange Optical Image Stabilizer\n' +
+    '        \n' +
+    '        \n' +
+    '            \n' +
+    '                530.00\n' +
+    '            \n' +
+    '            \n' +
+    '                \n' +
+    '            \n' +
+    '            \n' +
+    '        \n' +
+    '    \n' +
+    '\n' +
+    '\n' +
+    '                    ',
+  '\n' +
+    '                        \n' +
+    '\n' +
+    '    \n' +
+    '        \n' +
+    '            \n' +
+    '        \n' +
+    '    \n' +
+    '    \n' +
+    '        \n' +
+    '            Digital SLR Camera 12.2 Mpixel\n' +
+    '        \n' +
+    '            \n' +
+    '                \n' +
+    '                    \n' +
+    '                    \n' +
+    '                \n' +
+    '            \n' +
+    '        \n' +
+    '            12.2-megapixel sensor captures enough detail for poster-size, photo-quality prints\n' +
+    '        \n' +
+    '        \n' +
+    '            \n' +
+    '                From 500.00\n' +
+    '            \n' +
+    '            \n' +
+    '                \n' +
+    '            \n' +
+    '            \n' +
+    '        \n' +
+    '    \n' +
+    '\n' +
+    '\n' +
+    '                    ',
+  '\n' +
+    '                        \n' +
+    '\n' +
+    '    \n' +
+    '        \n' +
+    '            \n' +
+    '        \n' +
+    '    \n' +
+    '    \n' +
+    '        \n' +
+    '            High Definition 3D Camcorder\n' +
+    '        \n' +
+    '            \n' +
+    '                \n' +
+    '                    \n' +
+    '                    \n' +
+    '                \n' +
+    '            \n' +
+    '        \n' +
+    "            World's first 3D Shooting Camcorder\n" +
+    '        \n' +
+    '        \n' +
+    '            \n' +
+    '                1300.00\n' +
+    '            \n' +
+    '            \n' +
+    '                \n' +
+    '            \n' +
+    '            \n' +
+    '        \n' +
+    '    \n' +
+    '\n' +
+    '\n' +
+    '                    '
+]
+1MP 60GB Hard Drive Handycam Camcorder
+        
+            
+                
+                    
+                    
+                
+            
+        
+            Capture video to hard disk drive; 60 GB storage
+        
+        
+            
+                349.00
+Camcorder
+        
+            
+                
+                    
+                    
+                
+            
+        
+            12x optical zoom; SuperRange Optical Image Stabilizer
+        
+        
+            
+                530.00
+Digital SLR Camera 12.2 Mpixel
+        
+            
+                
+                    
+                    
+                
+            
+        
+            12.2-megapixel sensor captures enough detail for poster-size, photo-quality prints
+        
+        
+            
+                From 500.00
+High Definition 3D Camcorder
+        
+            
+                
+                    
+                    
+                
+            
+        
+            World's first 3D Shooting Camcorder
+        
+        
+            
+                1300.00

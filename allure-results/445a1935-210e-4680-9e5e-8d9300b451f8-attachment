@@ -1,0 +1,327 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Add to Cart
+- Location: D:\DemoWebShopProject\tests\AddToCartPageTest.spec.js:6:5
+
+# Error details
+
+```
+Error: locator.click: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for locator('//h2/a[contains(text(),\'Camera\')]')
+
+    at AddToCartPage.clickOnCameraItem (D:\DemoWebShopProject\pages\AddToCartPage.js:64:22)
+    at D:\DemoWebShopProject\tests\AddToCartPageTest.spec.js:21:5
+```
+
+# Page snapshot
+
+```yaml
+- link "Tricentis Demo Web Shop":
+  - img "Tricentis Demo Web Shop"
+- list:
+  - listitem:
+    - link "mrchetanade@gmail.com"
+  - listitem:
+    - link "Log out"
+  - listitem:
+    - link "Shopping cart (0)"
+  - listitem:
+    - link "Wishlist (0)"
+- status
+- textbox: Search store
+- button "Search"
+- list:
+  - listitem:
+    - link "Books"
+  - listitem:
+    - link "Computers"
+  - listitem:
+    - link "Electronics"
+  - listitem:
+    - link "Apparel & Shoes"
+  - listitem:
+    - link "Digital downloads"
+  - listitem:
+    - link "Jewelry"
+  - listitem:
+    - link "Gift Cards"
+- strong: Categories
+- list:
+  - listitem:
+    - link "Books"
+  - listitem:
+    - link "Computers"
+  - listitem:
+    - link "Electronics"
+  - listitem:
+    - link "Apparel & Shoes"
+  - listitem:
+    - link "Digital downloads"
+  - listitem:
+    - link "Jewelry"
+  - listitem:
+    - link "Gift Cards"
+- strong: Manufacturers
+- list:
+  - listitem:
+    - link "Tricentis"
+- strong: Newsletter
+- text: "Sign up for our newsletter:"
+- textbox
+- button "Subscribe"
+- list:
+  - listitem:
+    - link "Home"
+    - text: /
+  - listitem:
+    - strong: Apparel & Shoes
+- heading "Apparel & Shoes" [level=1]
+- text: View as
+- combobox:
+  - option "Grid" [selected]
+  - option "List"
+- text: Sort by
+- combobox:
+  - option "Position" [selected]
+  - 'option "Name: A to Z"'
+  - 'option "Name: Z to A"'
+  - 'option "Price: Low to High"'
+  - 'option "Price: High to Low"'
+  - option "Created on"
+- text: Display
+- combobox:
+  - option "4"
+  - option "8" [selected]
+  - option "12"
+- text: per page
+- link "Picture of 50's Rockabilly Polka Dot Top JR Plus Size":
+  - img "Picture of 50's Rockabilly Polka Dot Top JR Plus Size"
+- heading "50's Rockabilly Polka Dot Top JR Plus Size" [level=2]:
+  - link "50's Rockabilly Polka Dot Top JR Plus Size"
+- text: "11.00"
+- button "Add to cart"
+- link "Picture of Blue and green Sneaker":
+  - img "Picture of Blue and green Sneaker"
+- heading "Blue and green Sneaker" [level=2]:
+  - link "Blue and green Sneaker"
+- text: "11.00"
+- button "Add to cart"
+- link "Picture of Blue Jeans":
+  - img "Picture of Blue Jeans"
+- heading "Blue Jeans" [level=2]:
+  - link "Blue Jeans"
+- text: "1.00"
+- button "Add to cart"
+- link "Picture of Casual Golf Belt":
+  - img "Picture of Casual Golf Belt"
+- heading "Casual Golf Belt" [level=2]:
+  - link "Casual Golf Belt"
+- text: "1.00"
+- button "Add to cart"
+- link "Picture of Custom T-Shirt":
+  - img "Picture of Custom T-Shirt"
+- heading "Custom T-Shirt" [level=2]:
+  - link "Custom T-Shirt"
+- text: "15.00"
+- link "Picture of Denim Short with Rhinestones":
+  - img "Picture of Denim Short with Rhinestones"
+- heading "Denim Short with Rhinestones" [level=2]:
+  - link "Denim Short with Rhinestones"
+- text: "10.00"
+- link "Picture of Genuine Leather Handbag with Cell Phone Holder & Many Pockets":
+  - img "Picture of Genuine Leather Handbag with Cell Phone Holder & Many Pockets"
+- heading "Genuine Leather Handbag with Cell Phone Holder & Many Pockets" [level=2]:
+  - link "Genuine Leather Handbag with Cell Phone Holder & Many Pockets"
+- text: "35.00"
+- button "Add to cart"
+- link "Picture of Green and blue Sneaker":
+  - img "Picture of Green and blue Sneaker"
+- heading "Green and blue Sneaker" [level=2]:
+  - link "Green and blue Sneaker"
+- text: "17.56"
+- list:
+  - listitem: "1"
+  - listitem:
+    - link "2"
+  - listitem:
+    - link "Next"
+- heading "Information" [level=3]
+- list:
+  - listitem:
+    - link "Sitemap"
+  - listitem:
+    - link "Shipping & Returns"
+  - listitem:
+    - link "Privacy Notice"
+  - listitem:
+    - link "Conditions of Use"
+  - listitem:
+    - link "About us"
+  - listitem:
+    - link "Contact us"
+- heading "Customer service" [level=3]
+- list:
+  - listitem:
+    - link "Search"
+  - listitem:
+    - link "News"
+  - listitem:
+    - link "Blog"
+  - listitem:
+    - link "Recently viewed products"
+  - listitem:
+    - link "Compare products list"
+  - listitem:
+    - link "New products"
+- heading "My account" [level=3]
+- list:
+  - listitem:
+    - link "My account"
+  - listitem:
+    - link "Orders"
+  - listitem:
+    - link "Addresses"
+  - listitem:
+    - link "Shopping cart"
+  - listitem:
+    - link "Wishlist"
+- heading "Follow us" [level=3]
+- list:
+  - listitem:
+    - link "Facebook"
+  - listitem:
+    - link "Twitter"
+  - listitem:
+    - link "RSS"
+  - listitem:
+    - link "YouTube"
+  - listitem:
+    - link "Google+"
+- text: Powered by
+- link "nopCommerce"
+- text: Copyright © 2025 Tricentis Demo Web Shop. All rights reserved.
+```
+
+# Test source
+
+```ts
+   1 | exports.AddToCartPage = class AddToCartPage{
+   2 |
+   3 |     constructor(page)
+   4 |     {
+   5 |         this.page = page;
+   6 |         this.headerMenu = "//div[@class='header-menu']/ul/li/a";
+   7 |         this.camera = "//h2/a[contains(text(),'Camera')]";
+   8 |         this.cell = "//h2/a[contains(text(),'cell')]";
+   9 |         this.heading = "//h1";
+   10 |         this.elctronicsList = "//h2[@class='title']";
+   11 |         this.pageHeading = "//div[@class='page-title']/h1";
+   12 |         this.totalCameraAssests = "//div[@class='product-grid']/div";
+   13 |
+   14 |
+   15 |
+   16 |     }
+   17 |
+   18 |     async selectTheHeaderMenu(HeaderName)
+   19 |     {
+   20 |         const HeaderMenuList = await this.page.$$(this.headerMenu);
+   21 |         //const menuList = await HeaderMenuList.count();
+   22 |         //console.log(menuList);
+   23 |
+   24 |         for (const menu of HeaderMenuList)
+   25 |         {
+   26 |             //console.log(await menu.textContent());
+   27 |             //console.log("Total item list : ", await menu.count());
+   28 |            
+   29 |             const value = await menu.textContent();
+   30 |             console.log(value);
+   31 |
+   32 |             if(value.includes(HeaderName))
+   33 |             {
+   34 |                 await Promise.all([
+   35 |                     this.page.waitForNavigation(), // ✅ waits for navigation safely
+   36 |                     menu.click()
+   37 |                 ]);
+   38 |                 console.log("item selected");
+   39 |                 break; // stop after clicking
+   40 |             }
+   41 |                 
+   42 |
+   43 |         }
+   44 |
+   45 |     }
+   46 |
+   47 |     async getPageTitle()
+   48 |     {
+   49 |         const title = await this.page.title();
+   50 |         console.log("the page title is :", +title);
+   51 |     }
+   52 |
+   53 |     async selectTheElectronicsList()
+   54 |     {
+   55 |         const EleList = await this.page.locator("//h2[@class='title']");
+   56 |         const count = await EleList.count();
+   57 |         console.log("Number of electronics items:", count);
+   58 |  
+   59 |     }
+   60 |
+   61 |     async clickOnCameraItem()
+   62 |     {
+   63 |         const camera = await this.page.locator(this.camera);
+>  64 |         await camera.click();
+      |                      ^ Error: locator.click: Test timeout of 30000ms exceeded.
+   65 |         console.log("camera item selected");
+   66 |     }
+   67 |
+   68 |     async getPageTitleHeading()
+   69 |     {
+   70 |         const pageHeading = await this.page.locator(this.pageHeading);
+   71 |         console.log(await pageHeading.textContent());
+   72 |         const text = await pageHeading.textContent();
+   73 |         
+   74 |         if (text) {
+   75 |             console.log(text.trim());
+   76 |         } else {
+   77 |             console.log("Element not found or textContent is null");
+   78 |         }
+   79 |
+   80 |     }
+   81 |
+   82 |     async selectTheCamerasProduct()
+   83 |     {
+   84 |         const cam = await this.page.locator(this.totalCameraAssests);
+   85 |         const camAsset = await this.page.$$(this.totalCameraAssests);
+   86 |         console.log(await cam.count());
+   87 |         const camList = await cam.allTextContents();
+   88 |         console.log(camList);
+   89 |
+   90 |         for (const text of camList) {
+   91 |             console.log(text.trim());
+   92 |         }
+   93 |
+   94 |         for(const option of camAsset)
+   95 |         {
+   96 |             const value = await option.textContent();
+   97 |             console.log(value);
+   98 |         
+   99 |
+  100 |         if(value.includes("Camcorder"))
+  101 |             {
+  102 |             
+  103 |                 await option.click();
+  104 |                 console.log("camcorder clicked")
+  105 |                 break;
+  106 |             
+  107 |             
+  108 |             }
+  109 |         }
+  110 |     }
+  111 | }
+```

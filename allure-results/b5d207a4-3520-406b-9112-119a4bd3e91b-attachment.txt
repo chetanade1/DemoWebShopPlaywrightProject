@@ -1,0 +1,199 @@
+Page Loaded
+Login button clicked
+Login Successfully
+Books
+        
+Computers
+        
+Electronics
+        
+Apparel & Shoes
+        
+item selected
+the page title is : Demo Web Shop. Apparel & Shoes
+8
+[
+  "50's Rockabilly Polka Dot Top JR Plus Size",
+  'Blue and green Sneaker',
+  'Blue Jeans',
+  'Casual Golf Belt',
+  'Custom T-Shirt',
+  'Denim Short with Rhinestones',
+  'Genuine Leather Handbag with Cell Phone Holder & Many Pockets',
+  'Green and blue Sneaker'
+]
+Apparel & Shoes
+Apparel & Shoes
+50's Rockabilly Polka Dot Top JR Plus Size
+options clicked
+[
+  '\n' +
+    '                        \n' +
+    '                            \n' +
+    "                                50's Rockabilly Polka Dot Top JR Plus Size\n" +
+    '                            \n' +
+    '                        \n' +
+    '                        \n' +
+    '                        \n' +
+    '                        \n' +
+    '    \n' +
+    '        Availability: In stock\n' +
+    '    \n' +
+    '\n' +
+    '\n' +
+    '                        \n' +
+    '                        \n' +
+    '                        \n' +
+    '                        \n' +
+    '                        \n' +
+    '                        \n' +
+    '    \n' +
+    '        \n' +
+    '            \n' +
+    '                \n' +
+    '                \n' +
+    '            \n' +
+    '        \n' +
+    '\n' +
+    '            \n' +
+    '                522\n' +
+    '                    review(s) | Add your review\n' +
+    '            \n' +
+    '            2.9\n' +
+    '            522\n' +
+    '    \n' +
+    '\n' +
+    '                        \n' +
+    '                        \n' +
+    '                        \n' +
+    '\n' +
+    '\n' +
+    '\n' +
+    '    \n' +
+    '        \n' +
+    '                \n' +
+    '                    \n' +
+    '                        Size\n' +
+    '                    \n' +
+    '                        *\n' +
+    '                                    \n' +
+    '                \n' +
+    '                        \n' +
+    '                                                            Small\n' +
+    '                                    \n' +
+    '                                \n' +
+    '                                1X\n' +
+    '                                     [+2.00]\n' +
+    '                                \n' +
+    '                                2X\n' +
+    '                                    \n' +
+    '                                \n' +
+    '                                3X\n' +
+    '                                    \n' +
+    '                                \n' +
+    '                                4X\n' +
+    '                                    \n' +
+    '                                \n' +
+    '                                5X\n' +
+    '                                    \n' +
+    '                                \n' +
+    '                        \n' +
+    '                \n' +
+    '        \n' +
+    '    \n' +
+    '\n' +
+    '\n' +
+    '\n' +
+    '\n' +
+    '\n' +
+    '\n' +
+    '\n' +
+    '    \n' +
+    '            \n' +
+    '        //Picture adjustment table\n' +
+    '        var productAttributeValueAdjustmentTable_5 = new Array();\n' +
+    '        //Picture adjustment table initialize\n' +
+    "        productAttributeValueAdjustmentTable_5['product_attribute_5_7_1_defaultsize'] = new Array('','','','','','');\n" +
+    "productAttributeValueAdjustmentTable_5['product_attribute_5_7_1_fullsize'] = new Array('','','','','','');\n" +
+    '\n' +
+    '        //Picture adjustment function\n' +
+    '        function adjustProductAttributeValuePicture_5(controlId, productId) {\n' +
+    "            var ctrl = $('#' + controlId);\n" +
+    "            var pictureDefaultSizeUrl = '';\n" +
+    "            var pictureFullSizeUrl = '';\n" +
+    "            if((ctrl.is(':radio') && ctrl.is(':checked')) || (ctrl.is(':checkbox') && ctrl.is(':checked'))) {\n" +
+    "                pictureDefaultSizeUrl = productAttributeValueAdjustmentTable_5[controlId + '_defaultsize'];\n" +
+    "                pictureFullSizeUrl = productAttributeValueAdjustmentTable_5[controlId + '_fullsize'];\n" +
+    "            } else if(ctrl.is('select')) {\n" +
+    `                var idx = $('#' + controlId + " option").index($('#' + controlId + " option:selected"));\n` +
+    '                if(idx != -1) {\n' +
+    "                    pictureDefaultSizeUrl = productAttributeValueAdjustmentTable_5[controlId + '_defaultsize'][idx];\n" +
+    "                    pictureFullSizeUrl = productAttributeValueAdjustmentTable_5[controlId + '_fullsize'][idx];\n" +
+    '                }\n' +
+    '            }\n' +
+    "            if (typeof pictureDefaultSizeUrl == 'string' && pictureDefaultSizeUrl != '') {\n" +
+    `                $('#main-product-img-' + productId).attr("src", pictureDefaultSizeUrl);\n` +
+    '            }\n' +
+    "            if (typeof pictureFullSizeUrl == 'string' && pictureFullSizeUrl != '') {\n" +
+    `                $('#main-product-img-lightbox-anchor-' + productId).attr("href", pictureFullSizeUrl);\n` +
+    '            }\n' +
+    '        }\n' +
+    '        // Picture attributes handlers\n' +
+    '        $(document).ready(function() {\n' +
+    "            $('#product_attribute_5_7_1').change(function(){adjustProductAttributeValuePicture_5('product_attribute_5_7_1',5);});\n" +
+    '\n' +
+    '        });\n' +
+    '    \n' +
+    '\n' +
+    '                        \n' +
+    '\n' +
+    '                        \n' +
+    '\n' +
+    '\n' +
+    '        \n' +
+    '\n' +
+    '            \n' +
+    '11.00            \n' +
+    '        \n' +
+    '            \n' +
+    '\n' +
+    '\n' +
+    '                \n' +
+    '            Qty:\n' +
+    '                \n' +
+    '                    $(document).ready(function() {\n' +
+    '                        $("#addtocart_5_EnteredQuantity").keydown(function(event) {\n' +
+    '                                 if (event.keyCode == 13) {\n' +
+    '                                     $("#add-to-cart-button-5").click();\n' +
+    '                                     return false;\n' +
+    '                                 }\n' +
+    '                             });\n' +
+    '                         });\n' +
+    '                \n' +
+    '                            \n' +
+    '                            \n' +
+    '        \n' +
+    '    \n' +
+    '\n' +
+    '\n' +
+    '                            \n' +
+    '        \n' +
+    '    \n' +
+    '\n' +
+    '                            \n' +
+    '        \n' +
+    '    \n' +
+    '\n' +
+    '                        \n' +
+    '    \n' +
+    '        \n' +
+    '    \n' +
+    '\n' +
+    '                        \n' +
+    '                    '
+]
+Product name is : 
+                                50's Rockabilly Polka Dot Top JR Plus Size
+                            
+Product name is : 50's Rockabilly Polka Dot Top JR Plus Size
+The availability is : locator('//div/span[@class=\'value\']')

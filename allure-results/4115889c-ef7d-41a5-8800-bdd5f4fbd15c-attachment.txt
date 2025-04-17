@@ -1,0 +1,12 @@
+Page Loaded
+Login button clicked
+Login Successfully
+Books
+        
+Computers
+        
+Electronics
+        
+item selected
+the page title is : NaN
+Electronics list is : Camera, photo
