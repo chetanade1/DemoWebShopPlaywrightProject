@@ -14,6 +14,8 @@ test("Add to Cart", async ({page}) => {
 
     await login.login("mrchetanade@gmail.com", "test@123");
     await page.waitForTimeout(5000);
+    await add.selectTheHeaderMenu("Gift Cards");
+    await page.waitForTimeout(5000);
 
 
 })
