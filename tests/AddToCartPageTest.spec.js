@@ -14,8 +14,19 @@ test("Add to Cart", async ({page}) => {
 
     await login.login("mrchetanade@gmail.com", "test@123");
     await page.waitForTimeout(5000);
-    await add.selectTheHeaderMenu("Gift Cards");
+    await add.selectTheHeaderMenu("Apparel & Shoes");
     await page.waitForTimeout(5000);
+    await add.getPageTitle();
+    //await add.selectTheElectronicsList();
+    //await add.clickOnCameraItem();
+    await add.selectTheApparelAndShoesProduct();
+    await add.getPageTitleHeading();
+    await add.clickOnPolkaDotTopProduct();
+    //await add.selectTheCamerasProduct();
+    await page.waitForTimeout(5000);
+    await add.getAllTheOverview();
+    await add.getProductDetailsOverview();
+
 
 
 })
