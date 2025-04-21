@@ -30,9 +30,11 @@ test("Add to Cart", async ({page}) => {
     await add.getProductDetailsOverview();
 
     //shoping cart
-    await shop.clickOnShoppingCartButtonLink();
-    
+    await shop.clickOnShoppingCartButtonLink();  
     await shop.getPageHeadingOfShoppingCart();
+    await shop.printCartItems();
+    await shop.removeTheItemFromCart();
+    await shop.clickOnUpdateShoppingCart();
 
 
 
