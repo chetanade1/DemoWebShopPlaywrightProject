@@ -21,6 +21,8 @@ exports.AddToCartPage = class AddToCartPage{
         this.addToWishList = "#add-to-wishlist-button-5";
         this.addToFriend = "//input[@value='Email a friend']";
         this.addToCompare = "//input[@value='Add to compare list']";
+        this.addToCart = "#add-to-cart-button-5";
+        this.contentMsg = "//p[contains(text(),'The product has been added to your ')]";
 
 
 
@@ -211,9 +213,17 @@ exports.AddToCartPage = class AddToCartPage{
         await expect(addToCompare).toBeVisible();
         console.log("Add to compared button displayed");
 
-        //
+        //chech whether add to cart button visibled or not and click
+        const addToCartButton = await this.page.locator(this.addToCart);
+        await expect(addToCartButton).toBeVisible();
+        console.log("Add to Console button Visibled");
+        await addToCartButton.click();
+        console.log("Add to Cart Button Clicked");
 
-
+        //Verify Successfull msg
+        const successMsg = await this.page.locator(this.contentMsg);
+        const ContMsg = await successMsg.textContent();
+        console.log("The Content Msg is :", ContMsg.trim())
 
 
 
