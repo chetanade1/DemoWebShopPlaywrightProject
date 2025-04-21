@@ -19,6 +19,8 @@ exports.AddToCartPage = class AddToCartPage{
         this.productPrice = ".product-price";
         this.prodQuantity = "#addtocart_5_EnteredQuantity";
         this.addToWishList = "#add-to-wishlist-button-5";
+        this.addToFriend = "//input[@value='Email a friend']";
+        this.addToCompare = "//input[@value='Add to compare list']";
 
 
 
@@ -197,8 +199,19 @@ exports.AddToCartPage = class AddToCartPage{
         //check whether add to wish cart visible or not
         const addtowish = await this.page.locator(this.addToWishList);
         await expect(addtowish).toBeVisible();
-        console.log("Add to wish cart button displayed")
+        console.log("Add to wish cart button displayed");
 
+        //Check whether add to friend button visibled or not
+        const addToFriend = await this.page.locator(this.addToFriend);
+        await expect(addToFriend).toBeVisible();
+        console.log("Add to Friend button displayed");
+
+        //Check whether add to compare button visible or not
+        const addToCompare = await this.page.locator(this.addToCompare);
+        await expect(addToCompare).toBeVisible();
+        console.log("Add to compared button displayed");
+
+        //
 
 
 

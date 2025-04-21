@@ -1,9 +1,0 @@
-Page Loaded
-Register button clicked
-gender clicked
-Register button clicked
-First name error message is: locator('//span[@for=\'FirstName\']')
-Last name error message is: locator('//span[@for=\'LastName\']')
-Email error message is: locator('//span[@for=\'Email\']')
-Password error message is: locator('//span[@for=\'Password\']')
-Confirm Password error message is: locator('//span[@for=\'ConfirmPassword\']')

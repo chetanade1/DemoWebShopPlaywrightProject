@@ -1,3 +1,0 @@
-Page Loaded
-Login button clicked
-Login Successfully

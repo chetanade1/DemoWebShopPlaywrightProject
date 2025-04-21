@@ -142,6 +142,10 @@ exports.UIcomponents = class UIcomponents {
         await expect(catagoryList).toHaveCount(8);
         console.log("Total Catagory List: ", await catagoryList.count());
         console.log("Total Catagory List: ", await catagoryList.allTextContents());
+        const catList = await catagoryList.allTextContents();
+        const trimmedList = catList.map(item => item.trim());
+        console.log("Trimmed Category List:", trimmedList);
+        //console.log(catList.trim());
         console.log("Catagory List is visible");
     }
 
@@ -160,6 +164,9 @@ exports.UIcomponents = class UIcomponents {
         await expect(ManufacturersList).toHaveCount(1);
         console.log("Total Manufacturers List: ", await ManufacturersList.count());
         console.log("Total Manufacturers List: ", await ManufacturersList.allTextContents());
+        const manList = await ManufacturersList.allTextContents();
+        const trimmedList = manList.map(item => item.trim());
+        console.log("Menufactures list is :" ,trimmedList);
         await expect(ManufacturersList).toBeVisible();
         console.log("Manufacturers List is visible");
     }
@@ -171,6 +178,9 @@ exports.UIcomponents = class UIcomponents {
         await expect(HeaderManuFeatureList).toHaveCount(14);
         console.log("Total Header Manu Feature List: ", await HeaderManuFeatureList.count());
         console.log("Total Header Manu Feature List: ", await HeaderManuFeatureList.allTextContents());
+        const fullList = await HeaderManuFeatureList.allTextContents();
+        const headerList = fullList.map(item => item.trim());
+        console.log(headerList);
         console.log("Header Manu Feature List is visible");
     }
 
@@ -372,6 +382,12 @@ exports.UIcomponents = class UIcomponents {
         const footerText = await this.page.locator(this.footerText);
         //await expect(footerText).toHaveText("© 2023 Tricentis GmbH. All rights reserved.");
         console.log("Footer Text: ", await footerText.allTextContents());
+
+        const allTexts = await footerText.allTextContents();
+        if (allTexts.length > 0) {
+        console.log("Footer Text:", allTexts[0].trim());
+        }
+        
         await expect(footerText).toBeVisible();
         console.log("Footer Text is visible");
     }
