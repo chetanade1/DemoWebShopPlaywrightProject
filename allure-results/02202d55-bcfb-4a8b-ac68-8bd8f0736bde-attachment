@@ -1,0 +1,314 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Add to Cart
+- Location: D:\DemoWebShopProject\tests\AddToCartPageTest.spec.js:7:5
+
+# Error details
+
+```
+Error: locator.textContent: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for locator('//p[contains(text(),\'The product has been added to your \')]')
+
+    at AddToCartPage.getProductDetailsOverview (D:\DemoWebShopProject\pages\AddToCartPage.js:225:42)
+    at D:\DemoWebShopProject\tests\AddToCartPageTest.spec.js:30:5
+```
+
+# Page snapshot
+
+```yaml
+- link "Tricentis Demo Web Shop":
+  - img "Tricentis Demo Web Shop"
+- list:
+  - listitem:
+    - link "mrchetanade@gmail.com"
+  - listitem:
+    - link "Log out"
+  - listitem:
+    - link "Shopping cart (0)"
+  - listitem:
+    - link "Wishlist (1)"
+- status
+- textbox: Search store
+- button "Search"
+- list:
+  - listitem:
+    - link "Books"
+  - listitem:
+    - link "Computers"
+  - listitem:
+    - link "Electronics"
+  - listitem:
+    - link "Apparel & Shoes"
+  - listitem:
+    - link "Digital downloads"
+  - listitem:
+    - link "Jewelry"
+  - listitem:
+    - link "Gift Cards"
+- strong: Categories
+- list:
+  - listitem:
+    - link "Books"
+  - listitem:
+    - link "Computers"
+  - listitem:
+    - link "Electronics"
+  - listitem:
+    - link "Apparel & Shoes"
+  - listitem:
+    - link "Digital downloads"
+  - listitem:
+    - link "Jewelry"
+  - listitem:
+    - link "Gift Cards"
+- strong: Manufacturers
+- list:
+  - listitem:
+    - link "Tricentis"
+- strong: Newsletter
+- text: "Sign up for our newsletter:"
+- textbox
+- button "Subscribe"
+- list:
+  - listitem:
+    - link "Home"
+    - text: /
+  - listitem:
+    - link "Apparel & Shoes"
+    - text: /
+  - listitem:
+    - strong: 50's Rockabilly Polka Dot Top JR Plus Size
+- img "Picture of 50's Rockabilly Polka Dot Top JR Plus Size"
+- heading "50's Rockabilly Polka Dot Top JR Plus Size" [level=1]
+- text: "Availability: In stock"
+- link "522 review(s)"
+- text: "|"
+- link "Add your review"
+- term: Size *
+- definition:
+  - combobox:
+    - option "Small"
+    - option "1X [+2.00]"
+    - option "2X"
+    - option "3X" [selected]
+    - option "4X"
+    - option "5X"
+- text: "11.00 Qty:"
+- textbox "Qty:": "4"
+- button "Add to cart"
+- button "Add to wishlist"
+- button "Email a friend"
+- button "Add to compare list"
+- paragraph: Fitted polkadot print cotton top with tie cap sleeves.
+- strong: Product tags
+- list:
+  - listitem:
+    - link "cool"
+    - text: (17)
+  - listitem: ","
+  - listitem:
+    - link "apparel"
+    - text: (12)
+  - listitem: ","
+  - listitem:
+    - link "shirt"
+    - text: (3)
+  - listitem: ","
+  - listitem:
+    - link "awesome"
+    - text: (20)
+- strong: Customers who bought this item also bought
+- link "Picture of Simple Computer":
+  - img "Picture of Simple Computer"
+- heading "Simple Computer" [level=2]:
+  - link "Simple Computer"
+- text: "800.00"
+- button "Add to cart"
+- link "Picture of Blue and green Sneaker":
+  - img "Picture of Blue and green Sneaker"
+- heading "Blue and green Sneaker" [level=2]:
+  - link "Blue and green Sneaker"
+- text: "11.00"
+- button "Add to cart"
+- link "Picture of Phone Cover":
+  - img "Picture of Phone Cover"
+- heading "Phone Cover" [level=2]:
+  - link "Phone Cover"
+- text: "10.00"
+- button "Add to cart"
+- heading "Information" [level=3]
+- list:
+  - listitem:
+    - link "Sitemap"
+  - listitem:
+    - link "Shipping & Returns"
+  - listitem:
+    - link "Privacy Notice"
+  - listitem:
+    - link "Conditions of Use"
+  - listitem:
+    - link "About us"
+  - listitem:
+    - link "Contact us"
+- heading "Customer service" [level=3]
+- list:
+  - listitem:
+    - link "Search"
+  - listitem:
+    - link "News"
+  - listitem:
+    - link "Blog"
+  - listitem:
+    - link "Recently viewed products"
+  - listitem:
+    - link "Compare products list"
+  - listitem:
+    - link "New products"
+- heading "My account" [level=3]
+- list:
+  - listitem:
+    - link "My account"
+  - listitem:
+    - link "Orders"
+  - listitem:
+    - link "Addresses"
+  - listitem:
+    - link "Shopping cart"
+  - listitem:
+    - link "Wishlist"
+- heading "Follow us" [level=3]
+- list:
+  - listitem:
+    - link "Facebook"
+  - listitem:
+    - link "Twitter"
+  - listitem:
+    - link "RSS"
+  - listitem:
+    - link "YouTube"
+  - listitem:
+    - link "Google+"
+- text: Powered by
+- link "nopCommerce"
+- text: Copyright © 2025 Tricentis Demo Web Shop. All rights reserved.
+```
+
+# Test source
+
+```ts
+  125 |         }
+  126 |     }
+  127 |
+  128 |     async selectTheApparelAndShoesProduct()
+  129 |     {
+  130 |         const totalProduct = await this.page.locator(this.totalApprail);
+  131 |         console.log(await totalProduct.count());
+  132 |         const prod =await totalProduct.allTextContents();
+  133 |         console.log(prod);
+  134 |     }
+  135 |
+  136 |     async clickOnPolkaDotTopProduct()
+  137 |     {
+  138 |
+  139 |         const totalProduct1 = await this.page.$$(this.totalApprail);
+  140 |
+  141 |         for(const option of totalProduct1)
+  142 |         {
+  143 |             const value = await option.textContent();
+  144 |             console.log(value);
+  145 |
+  146 |             if(value.includes("Polka"))
+  147 |             {
+  148 |                 await option.click();
+  149 |                 console.log("options clicked");
+  150 |                 break;
+  151 |             }
+  152 |         }
+  153 |     }
+  154 |
+  155 |     async getAllTheOverview()
+  156 |     {
+  157 |         const overText = await this.page.locator(this.over);
+  158 |         console.log(await overText.allTextContents());
+  159 |         //console.log(await overText.textContent().trim());
+  160 |     }
+  161 |
+  162 |     async getProductDetailsOverview()
+  163 |     {
+  164 |         //Product Name
+  165 |         const productName = await this.page.locator(this.productName);
+  166 |         const prodName = await productName.textContent();
+  167 |         console.log("Product name is :" ,await productName.textContent());
+  168 |         console.log("Product name is :", await prodName.trim());
+  169 |
+  170 |         // Check availability
+  171 |         const avail = await this.page.locator(this.stock);
+  172 |         console.log("The availability is :", await avail.textContent());
+  173 |
+  174 |         //Select the Size
+  175 |         const size = await this.page.locator(this.size);
+  176 |         await size.selectOption({value: "4"})
+  177 |         console.log("Size selected");
+  178 |
+  179 |         // Get the Product size
+  180 |         
+  181 |         /*
+  182 |
+  183 |         const priceElement = this.page.locator(this.price);
+  184 |         const priceText = await priceElement.textContent();
+  185 |
+  186 |         if (priceText) {
+  187 |             const numericPrice = parseFloat(priceText.replace(/[^0-9.]/g, ''));
+  188 |             console.log("Product price is:", numericPrice);
+  189 |             return numericPrice;
+  190 |         } else {
+  191 |             throw new Error('Price text not found on the page');
+  192 |         }
+  193 |
+  194 |         */
+  195 |
+  196 |         //Enter the Quantity of product
+  197 |         const productQuantity = await this.page.locator(this.prodQuantity);
+  198 |         await productQuantity.fill("4");
+  199 |         console.log("Quantity entered" );
+  200 |
+  201 |         //check whether add to wish cart visible or not
+  202 |         const addtowish = await this.page.locator(this.addToWishList);
+  203 |         await expect(addtowish).toBeVisible();
+  204 |         console.log("Add to wish cart button displayed");
+  205 |
+  206 |         //Check whether add to friend button visibled or not
+  207 |         const addToFriend = await this.page.locator(this.addToFriend);
+  208 |         await expect(addToFriend).toBeVisible();
+  209 |         console.log("Add to Friend button displayed");
+  210 |
+  211 |         //Check whether add to compare button visible or not
+  212 |         const addToCompare = await this.page.locator(this.addToCompare);
+  213 |         await expect(addToCompare).toBeVisible();
+  214 |         console.log("Add to compared button displayed");
+  215 |
+  216 |         //chech whether add to cart button visibled or not and click
+  217 |         const addToCartButton = await this.page.locator(this.addToCart);
+  218 |         await expect(addToCartButton).toBeVisible();
+  219 |         console.log("Add to Console button Visibled");
+  220 |         await addToCartButton.click();
+  221 |         console.log("Add to Cart Button Clicked");
+  222 |
+  223 |         //Verify Successfull msg
+  224 |         const successMsg = await this.page.locator(this.contentMsg);
+> 225 |         const ContMsg = await successMsg.textContent();
+      |                                          ^ Error: locator.textContent: Test timeout of 30000ms exceeded.
+  226 |         console.log("The Content Msg is :", ContMsg.trim())
+  227 |
+  228 |
+  229 |
+  230 |     }
+  231 | }
+```

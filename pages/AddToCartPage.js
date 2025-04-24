@@ -26,9 +26,6 @@ exports.AddToCartPage = class AddToCartPage{
 
 
 
-
-
-
     }
 
     async selectTheHeaderMenu(HeaderName)

@@ -1,0 +1,61 @@
+Page Loaded
+Login button clicked
+Login Successfully
+Books
+        
+Computers
+        
+Electronics
+        
+Apparel & Shoes
+        
+item selected
+the page title is : Demo Web Shop. Apparel & Shoes
+8
+[
+  "50's Rockabilly Polka Dot Top JR Plus Size",
+  'Blue and green Sneaker',
+  'Blue Jeans',
+  'Casual Golf Belt',
+  'Custom T-Shirt',
+  'Denim Short with Rhinestones',
+  'Genuine Leather Handbag with Cell Phone Holder & Many Pockets',
+  'Green and blue Sneaker'
+]
+Apparel & Shoes
+Apparel & Shoes
+50's Rockabilly Polka Dot Top JR Plus Size
+options clicked
+[]
+Product name is : 
+                                50's Rockabilly Polka Dot Top JR Plus Size
+                            
+Product name is : 50's Rockabilly Polka Dot Top JR Plus Size
+The availability is : In stock
+Size selected
+Quantity entered
+Add to wish cart button displayed
+Add to Friend button displayed
+Add to compared button displayed
+Add to Console button Visibled
+Add to Cart Button Clicked
+The Content Msg is : The product has been added to your shopping cart
+shopping cart lick Clicked
+Page heading is : Shopping cart
+Total items in cart: 1
+
+Item 1
+Product Name: 50's Rockabilly Polka Dot Top JR Plus Size
+Unit Price: Price:
+                            11.00
+Quantity: 8
+Total: Total:
+                            88.00
+remove checkbox clicked
+update shopping cart button clicked
+the message is : 
+    
+    
+Your Shopping Cart is empty!    
+
+text is : Your Shopping Cart is empty!

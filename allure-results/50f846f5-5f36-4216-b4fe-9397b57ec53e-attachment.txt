@@ -1,0 +1,27 @@
+Page Loaded
+Login button clicked
+Login Successfully
+Books
+        
+Computers
+        
+Electronics
+        
+Apparel & Shoes
+        
+item selected
+the page title is : Demo Web Shop. Apparel & Shoes
+8
+[
+  "50's Rockabilly Polka Dot Top JR Plus Size",
+  'Blue and green Sneaker',
+  'Blue Jeans',
+  'Casual Golf Belt',
+  'Custom T-Shirt',
+  'Denim Short with Rhinestones',
+  'Genuine Leather Handbag with Cell Phone Holder & Many Pockets',
+  'Green and blue Sneaker'
+]
+Apparel & Shoes
+Apparel & Shoes
+50's Rockabilly Polka Dot Top JR Plus Size

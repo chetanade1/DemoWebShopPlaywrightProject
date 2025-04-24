@@ -25,7 +25,7 @@ test("Add to Cart", async ({page}) => {
     await add.getPageTitleHeading();
     await add.clickOnPolkaDotTopProduct();
     //await add.selectTheCamerasProduct();
-    await page.waitForTimeout(5000);
+    //await page.waitForTimeout(5000);
     await add.getAllTheOverview();
     await add.getProductDetailsOverview();
 
@@ -35,8 +35,6 @@ test("Add to Cart", async ({page}) => {
     await shop.printCartItems();
     await shop.removeTheItemFromCart();
     await shop.clickOnUpdateShoppingCart();
-
-
 
 
 
